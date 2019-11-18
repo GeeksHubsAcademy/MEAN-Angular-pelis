@@ -8,7 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MovieCategoriesComponent } from './components/movie-categories/movie-categories.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatButtonModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
