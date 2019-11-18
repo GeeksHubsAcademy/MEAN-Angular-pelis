@@ -1,0 +1,7 @@
+<div class="movies">
+    <div class="movie" *ngFor="let pelicula of peliculas">
+       <h2>{{pelicula.title}}</h2> 
+        <img src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}" 
+        alt="poster">
+    </div>
+</div>

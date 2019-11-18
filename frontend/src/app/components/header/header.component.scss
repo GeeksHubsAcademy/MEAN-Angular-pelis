@@ -1,0 +1,12 @@
+.navigation {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(225, 254, 255);
+  span {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgb(198, 232, 255);
+  }
+}
+
