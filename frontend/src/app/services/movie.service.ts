@@ -15,4 +15,7 @@ export class MovieService {
   getMoviesByCategory(category:string):Observable<object>{
     return this.httpClient.get(`${this.apiUrl}movie/${category}?api_key=${this.apiKey}&language=es-ES`)
   }
+  getMovieById(id:string){
+    return this.httpClient.get(`${this.apiUrl}movie/${id}?api_key=${this.apiKey}&language=es-ES`)
+  }
 }

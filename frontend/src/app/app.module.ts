@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     MovieCategoriesComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
