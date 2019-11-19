@@ -1,0 +1,26 @@
+{
+  "name": "MEAN-pelis",
+  "version": "1.0.0",
+  "description": "Proyecto creado con propósitos educativos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:back": "cd backend && npm start",
+    "start:front": "cd frontend && npm start",
+    "install:back": "cd backend && npm install",
+    "install:front": "cd frontend && npm install",
+    "start": "concurrently \"npm run start:back \" \"npm run start:front\" ",
+    "postinstall": "concurrently \"npm run install:back \" \"npm run install:front\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeeksHubsAcademy/MEAN-Angular-pelis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeeksHubsAcademy/MEAN-Angular-pelis/issues"
+  },
+  "homepage": "https://github.com/GeeksHubsAcademy/MEAN-Angular-pelis#readme"
+}

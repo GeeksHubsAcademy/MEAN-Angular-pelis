@@ -1,6 +1,12 @@
 <form (submit)="registrar()" #form="ngForm">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Username" #username [(ngModel)]="user.username" name="Username">
+        <input 
+        matInput 
+        placeholder="Username"
+        required
+         #username 
+         [(ngModel)]="user.username"
+          name="Username">
     </mat-form-field>
     
     <div></div>
@@ -9,7 +15,9 @@
         <input matInput 
         type="password" 
         placeholder="Password" 
-        #password [(ngModel)]="user.password" name="Password">
+        #password 
+        [(ngModel)]="user.password" 
+        name="Password">
     </mat-form-field> 
     
     <div></div>

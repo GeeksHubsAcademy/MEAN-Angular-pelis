@@ -36,9 +36,7 @@ app.post('/user/register', async (req, res) => {
     }
 })
 app.patch('/user/:id', (req, res) => {
-    UserModel.findByIdAndUpdate(req.params.id, {
-            ...req.body
-        }, {
+    UserModel.findOneAndUpdate({_id:req.params.id}, req.body, {
             new: true,
             useFindAndModify: false
         })
