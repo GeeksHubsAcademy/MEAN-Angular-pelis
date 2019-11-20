@@ -12,11 +12,22 @@
     routerLinkActive="active-link">
       <span>Top rated Movies</span>
     </a>
+    <div class="isLoggedIn" *ngIf="userService.getUser()">
+      <a routerLink="/profile" routerLinkActive="active-link">
+        <span>Profile</span>
+      </a>
+      <a routerLink="/logout" routerLinkActive="active-link">
+        <span>Logout</span>
+      </a>
+    </div>
+
+    <div class="isNotLoggedIn" *ngIf="!userService.getUser()">
     <a routerLink="/register" routerLinkActive="active-link">
       <span>Register</span>
     </a>
     <a routerLink="/login" routerLinkActive="active-link">
       <span>Login</span>
     </a>
+  </div>
   </nav>
 </header>
