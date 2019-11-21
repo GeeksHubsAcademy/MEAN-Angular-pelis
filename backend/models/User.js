@@ -6,8 +6,15 @@ const UserSchema = mongoose.Schema({
         unique: true,
         required: true
     },
-    password: String
+    password: String,
+    tokens:[]
 })
+UserSchema.methods.toJSON=function (params) {
+    const user=this._doc;
+    delete user.tokens;
+    delete user.password;
+    return user;
+}
 UserSchema.methods.comparePassword=function (password) {
     const user = this;
     return bcrypt.compare(password,user.password)
