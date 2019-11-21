@@ -17,23 +17,31 @@ router.post('/register', async (req, res) => {
     }
 })
 
-router.post('/login', (req, res) => {
-    UserModel.findOne({
-            username: req.body.username,
-            password: req.body.password
+router.post('/login', async (req, res) => {
+    try {
+        const user = await UserModel.findOne({
+            username: req.body.username
         })
-        .then(user => {
-            if (!user) {
-                return res.status(400).send({
-                    message: 'Usuario o contraseña incorrectos'
-                })
-            }
-            res.send({
-                message: 'Bienvenido ' + user.username,
-                user
-            });
-        })
-        .catch(error => res.send(error.message))
+        if (!user) {
+            return res.status(400).send({
+                message: 'Usuario o contraseña incorrectos'
+            })
+        }
+        const isMatch = await user.comparePassword(req.body.password)
+        if (!isMatch) {
+            return res.status(400).send({
+                message: 'Usuario o contraseña incorrectos'
+            })
+        }
+        res.send({
+            message: 'Bienvenido ' + user.username,
+            user
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+
 })
 
 router.patch('/:id', (req, res) => {
