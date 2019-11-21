@@ -23,6 +23,7 @@ export class LoginComponent  {
       this.res=res;
       this.userService
       .setUser(res['user'])
+      localStorage.setItem('token',res['token'])
       setTimeout(() => {
         this.router.navigate(['/discover'])
       }, 2500);
