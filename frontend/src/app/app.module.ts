@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { HighlightDirective } from './highlight.directive';
+import { PlaygroundComponent } from './playground/playground.component';
+import { PadreComponent } from './interaccionComponentes/padre/padre.component';
+import { HijoComponent } from './interaccionComponentes/hijo/hijo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,11 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     RegisterComponent,
     FooterComponent,
     LoginComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    HighlightDirective,
+    PlaygroundComponent,
+    PadreComponent,
+    HijoComponent
   ],
   imports: [
     BrowserModule,

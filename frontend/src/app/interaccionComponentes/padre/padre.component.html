@@ -1,0 +1,7 @@
+
+<h2>Angular mola más que Vanilla JS?</h2>
+<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+<app-hijo *ngFor="let voter of voters"
+  [name]="voter"
+  (voted)="onVoted($event)">
+</app-hijo>
