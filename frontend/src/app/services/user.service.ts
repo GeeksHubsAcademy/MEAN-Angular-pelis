@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private user:User;
+  private user:User=JSON.parse(localStorage.getItem('user')) ;
   constructor(private httpClient:HttpClient) { }
-
+  isRed=false;
   register(user:User):Observable<object>{
     return this.httpClient.post('http://localhost:3000/user/register',user)
   }
@@ -20,7 +20,6 @@ export class UserService {
   getUser():User{
     return this.user;
   }
-
   setUser(user:User):void{
     this.user=user;
     localStorage.setItem('user',JSON.stringify(user) )

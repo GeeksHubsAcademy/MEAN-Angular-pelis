@@ -28,6 +28,9 @@ export class LoginComponent  {
         this.router.navigate(['/discover'])
       }, 2500);
     },
-    error=>this.res=error.error)
+    error=>{
+      this.userService.isRed=true;
+      this.res=error.error
+    })
   }
 }

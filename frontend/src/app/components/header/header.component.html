@@ -1,6 +1,6 @@
 <header>
-  <nav class="navigation">
-    <a routerLink="/discover"
+  <nav class="navigation" >
+    <a routerLink="/discover" [style.color]="userService.isRed ? 'red':'black'"
     routerLinkActive="active-link">
       <span>Home</span>
     </a>
