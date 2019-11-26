@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const UserModel = require('../models/User');
 const jwt = require('jsonwebtoken');
-router.get('/', (req, res) => {
+const { isAuthorized, isAdmin } = require('../middleware/authorization')
+router.get('/', isAuthorized, isAdmin, (req, res) => {
     UserModel.find({})
         .then(users => res.send(users))
         .catch(error => console.log(error))
@@ -34,11 +35,15 @@ router.post('/login', async (req, res) => {
                 message: 'Usuario o contraseña incorrectos'
             })
         }
-        
-        const token = jwt.sign({ _id: user._id }, 'missecretito', {
+
+        const token = jwt.sign({
+            _id: user._id
+        }, 'missecretito', {
             expiresIn: '24h'
         });
-        await UserModel.findOneAndUpdate({  _id: user._id }, {
+        await UserModel.findOneAndUpdate({
+            _id: user._id
+        }, {
             $push: {
                 tokens: token
             }

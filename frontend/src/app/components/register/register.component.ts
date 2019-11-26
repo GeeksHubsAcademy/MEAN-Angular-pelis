@@ -21,6 +21,7 @@ export class RegisterComponent implements AfterViewInit {
      }, 0);
   }
   registrar(form){
+    console.log(form)
     // this.userService.register()
     // .subscribe(res=>console.log(res))
   }

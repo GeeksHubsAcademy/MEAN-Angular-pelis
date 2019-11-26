@@ -7,6 +7,10 @@ const UserSchema = mongoose.Schema({
         required: true
     },
     password: String,
+    role:{
+        type:String,
+        default:'user'
+    },
     tokens:[]
 })
 UserSchema.methods.toJSON=function (params) {
