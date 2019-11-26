@@ -1,11 +1,11 @@
-<form (submit)="registrar()" #form="ngForm">
+<form (submit)="registrar(form.form)" #form="ngForm">
     <mat-form-field class="example-full-width">
         <input 
+        ngModel
+        #username ="ngModel"
         matInput 
         placeholder="Username"
         required
-         #username 
-         [(ngModel)]="user.username"
           name="Username">
     </mat-form-field>
     
@@ -15,14 +15,10 @@
         <input matInput 
         type="password" 
         placeholder="Password" 
-        #password 
-        [(ngModel)]="user.password" 
+        ngModel
+        #password ="ngModel"
         name="Password">
     </mat-form-field> 
-    
-    <div></div>
-    
     <button mat-raised-button>Register</button>
-    
 </form>
-{{user | json}}
+<!-- {{}} -->

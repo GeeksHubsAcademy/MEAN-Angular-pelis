@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, OnChanges, ElementRef } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -7,14 +7,21 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent  {
-  user:User={
-    username:'',
-    password:''
-  };
+export class RegisterComponent implements AfterViewInit {
+  @ViewChild('username',{read: ElementRef,static:false})
+  username;
+
   constructor(private userService:UserService) { }
-  registrar(){
-    this.userService.register(this.user)
-    .subscribe(res=>console.log(res))
+
+  ngAfterViewInit(){
+    console.log('After View Init ')
+    setTimeout(() => { 
+      console.log(this.username)
+      this.username.nativeElement.focus()
+     }, 0);
+  }
+  registrar(form){
+    // this.userService.register()
+    // .subscribe(res=>console.log(res))
   }
 }
